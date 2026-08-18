@@ -39,18 +39,54 @@ with a badly misconfigured decode — superseded, kept only for history.
   between transmission bursts and is rejected by start-bit validation. Earlier
   "≈10% panel corruption" was a decoder artefact, not real. [I]
 
-## Framing
+## Framing — fully resolved
 
 Both directions use the same frame shape: [M]
 
 ```
-FF  <payload bytes>  FE
+FF | body | CRC16(body) little-endian (2 bytes) | FE
 ```
 
-- `FF` = preamble/lead-in, `FE` = terminator. [I] — every FE-terminated group
-  is a self-consistent frame; 53 frames decoded on each side, exactly paired.
-- Treadmill response frames carry an extra `00` right after `FF` that the panel
-  requests do not. [M] — role unknown (address? direction flag?). [open]
+- `FF` = preamble/sync, `FE` = terminator; neither is covered by the CRC. [M]
+- `body` = everything between them except the 2 CRC bytes. Panel bodies start
+  with the command id; treadmill bodies start with an extra `00` then the
+  command id (the `00` **is** inside the CRC body). [M] — role of the `00`
+  still open (address / direction / status), but it is not framing overhead.
+- Frame boundaries confirmed two ways: gap histogram (4 ms within a frame,
+  59–81 ms between) and the FF.../...FE markers agree. [M]
+
+## Checksum — cracked (CRC-16/MCRF4XX)
+
+Brute-force over the IR (`analysis/checksum.py`) found **exactly one** algorithm
+that fits, and it fits **all 18 distinct frames across both directions and all
+four frame lengths** — independently re-verified in
+`analysis/checksum.py` output. [M]
+
+| Parameter | Value |
+|-----------|-------|
+| Width / poly | 16 / `0x1021` |
+| Init | `0xFFFF` |
+| RefIn / RefOut | true / true |
+| XorOut | `0x0000` |
+| Storage | little-endian (low byte first, before `FE`) |
+| Covered bytes | `body` only (from after `FF` up to the CRC bytes) |
+
+This is the standard **CRC-16/MCRF4XX**. No other poly/init/reflection/sum/XOR
+combination matched. 18 independent constraints (incl. an 11-frame single-byte
+sweep) make this a strong result, not a coincidental fit. We can now generate
+valid frames.
+
+## Speed field — identified
+
+Panel `40 23` frame, **byte index 3**, is the speed in **units of 0.1 km/h**.
+[M] Evidence (`analysis/frames.py` time series):
+
+- Holds at `0x0A` = 1.0 km/h through the run — matches the operator's stated
+  1 км/ч start speed.
+- After Stop (~t=14.6 s) it ramps **0x0A → 0x00** one 0.1 km/h step per ~200 ms
+  poll — matches the operator's "плавное замедление" (smooth deceleration).
+- Byte index 4 stays `00` (likely the high byte of a 16-bit speed, or a
+  reserved field). [I]
 
 ## Conversation structure (request ↔ response)
 
@@ -76,21 +112,30 @@ Panel polls, treadmill answers ~50 ms later, **echoing the command ID**: [M]
   [M, coarse]
 - Watchdog timeout (why replay stalls): not yet measured. [open]
 
+## Command ids (partial)
+
+Seen so far, same ids echoed both directions: [M]
+- `10 xx` — start/stop control. `10 01` at session start (run), `10 00` later
+  (stop). [I] — second byte looks like a run flag.
+- `40 23` — speed set/report (carries the speed byte). [M/I]
+- `41 5B` — query; treadmill answers with a `00 00` data field (incline /
+  distance / status?). [open]
+
 ## Open questions / not yet done
 
-- Meaning of the treadmill's extra `00` byte after `FF`.
-- **Checksum** — not started. Last 1–2 bytes before `FE` vary per frame
-  (`B9 04`, `2B BD`, `CC 6C`, `C1 90`) and are the checksum candidates.
-- **Speed field** — not yet located. The digital capture is a **single-speed
-  run at 1 км/ч** (customer, 18.08). The usable signature is therefore the
-  ramp **0 → 1 → 0 км/ч**: a response byte that rises from a stopped value as
-  the belt spins up (~t=8–12 s) and decays smoothly after Stop. Candidate
-  fields are the varying bytes in the treadmill `41 5B` response
-  (`00 00 C1 90`). The oscilloscope screenshots cover 1.1–1.6 км/ч but are not
-  bit-readable (too coarse); filename→speed mapping (`2Ksk11`=1.1 …
-  `2Ksk16`=1.6) is a hypothesis pending confirmation.
-- Sequence counter / monotonic field — not yet identified.
-- Precise watchdog timeout from the replay capture.
+- **Why does a fixed replay fail?** In steady running the panel `40 23` frame
+  is byte-identical every poll (speed `0x0A`), with a valid CRC and **no
+  visible sequence counter or echo of the treadmill's data**. A plain replay
+  should therefore satisfy a content watchdog — yet it stalls. So the trigger
+  is likely timing/handshake, or a counter/echo that only moves during events
+  not in this capture. This is the key firmware-architecture question.
+- **Watchdog timeout** — measure how long the treadmill ran under replay before
+  safety-stopping, from the old `Ответ_17_1922.csv`. Bounds the response
+  deadline.
+- Role of the treadmill body's leading `00`.
+- Meaning of the `41 5B` query and its `00 00` response field.
+- Sequence counter / monotonic field — searched in `40 23`, none found; confirm
+  across all frame types.
 
 ## Discarded hypotheses
 

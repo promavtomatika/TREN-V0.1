@@ -1,0 +1,109 @@
+{"t_start": 1.918512, "t_end": 1.922679, "direction": "panel", "n_bytes": 1, "bytes_hex": "00", "gap_before_ms": null, "starts_ff": false, "ends_fe": false, "framing_ok": false}
+{"t_start": 1.924401, "t_end": 1.928567, "direction": "treadmill", "n_bytes": 1, "bytes_hex": "00", "gap_before_ms": null, "starts_ff": false, "ends_fe": false, "framing_ok": false}
+{"t_start": 11.682546, "t_end": 11.707517, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 10 01 A0 74 FE", "gap_before_ms": 9759.868, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.724788, "t_end": 11.754153, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 10 01 2B BD FE", "gap_before_ms": 9796.221, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.782404, "t_end": 11.815697, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 74.887, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.834974, "t_end": 11.86434, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 80.82, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.882265, "t_end": 11.907233, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.568, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.923141, "t_end": 11.960932, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.8, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 11.982112, "t_end": 12.015402, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 74.88, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.033326, "t_end": 12.062793, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.394, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.081964, "t_end": 12.106934, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.563, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.121649, "t_end": 12.159526, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.856, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.181814, "t_end": 12.215108, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 74.881, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.231797, "t_end": 12.261266, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.271, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.281676, "t_end": 12.306647, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.568, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.319994, "t_end": 12.357868, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.728, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.381535, "t_end": 12.414828, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 74.888, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.430189, "t_end": 12.45961, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.321, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.481393, "t_end": 12.50636, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.565, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.518373, "t_end": 12.556356, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.763, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.581228, "t_end": 12.614512, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 74.869, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.628631, "t_end": 12.6581, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.275, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.681072, "t_end": 12.70604, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.559, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.727734, "t_end": 12.765604, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.633, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.781346, "t_end": 12.814637, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.306, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.826903, "t_end": 12.856374, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 61.298, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.880778, "t_end": 12.905749, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.141, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.926183, "t_end": 12.96405, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.81, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 12.981051, "t_end": 13.014338, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.302, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.036269, "t_end": 13.065794, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.218, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.080487, "t_end": 13.105459, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.15, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.124555, "t_end": 13.162529, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.761, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.180763, "t_end": 13.214053, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.304, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.234712, "t_end": 13.264132, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.183, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.280197, "t_end": 13.305162, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.144, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.322765, "t_end": 13.360691, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.633, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.380459, "t_end": 13.413748, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.297, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.433101, "t_end": 13.462623, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.41, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.479894, "t_end": 13.504865, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.146, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.521112, "t_end": 13.559032, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.489, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.580162, "t_end": 13.613452, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.297, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.631473, "t_end": 13.660888, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.441, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.6796, "t_end": 13.704571, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.149, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.719427, "t_end": 13.75729, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.539, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.779868, "t_end": 13.813158, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.297, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.829608, "t_end": 13.859024, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.319, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.879306, "t_end": 13.904274, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.148, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.917772, "t_end": 13.955745, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.749, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 13.979583, "t_end": 14.012883, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.309, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.02795, "t_end": 14.057472, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.205, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.079036, "t_end": 14.104002, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.153, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.116193, "t_end": 14.154056, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.721, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.179299, "t_end": 14.212587, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.297, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.226315, "t_end": 14.255784, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.259, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.278732, "t_end": 14.303702, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.145, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.325546, "t_end": 14.363467, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.762, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.378996, "t_end": 14.412294, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.294, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.424591, "t_end": 14.454059, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 61.124, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.478448, "t_end": 14.503419, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.154, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.523875, "t_end": 14.561744, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.816, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.578739, "t_end": 14.612036, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 0A 00 B9 04 FE", "gap_before_ms": 75.32, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.63396, "t_end": 14.663479, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.216, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.678191, "t_end": 14.703162, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.155, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.722154, "t_end": 14.760078, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.675, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.778052, "t_end": 14.811348, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 09 00 D1 2E FE", "gap_before_ms": 74.889, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.832299, "t_end": 14.86182, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.221, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.877917, "t_end": 14.902887, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.569, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.920442, "t_end": 14.958365, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.623, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 14.977778, "t_end": 15.011066, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 08 00 09 37 FE", "gap_before_ms": 74.891, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.030632, "t_end": 15.060102, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.267, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.077639, "t_end": 15.102611, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.573, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.118961, "t_end": 15.156828, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.858, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.1775, "t_end": 15.210793, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 07 00 C1 B4 FE", "gap_before_ms": 74.889, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.228957, "t_end": 15.258425, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.128, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.27737, "t_end": 15.302343, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.577, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.317166, "t_end": 15.355135, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.74, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.377244, "t_end": 15.410541, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 06 00 19 AD FE", "gap_before_ms": 74.901, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.427333, "t_end": 15.456859, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.198, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.477111, "t_end": 15.502082, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.57, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.515408, "t_end": 15.553274, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.548, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.576978, "t_end": 15.610273, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 05 00 71 87 FE", "gap_before_ms": 74.896, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.625538, "t_end": 15.655005, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.263, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.676849, "t_end": 15.701825, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.576, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.713747, "t_end": 15.751714, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.743, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.776722, "t_end": 15.810012, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 04 00 A9 9E FE", "gap_before_ms": 74.897, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.823922, "t_end": 15.853436, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.208, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.876576, "t_end": 15.901544, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.564, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.92305, "t_end": 15.960915, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.614, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 15.976421, "t_end": 16.009711, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 03 00 A1 D3 FE", "gap_before_ms": 74.877, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.02221, "t_end": 16.051674, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 61.295, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.076273, "t_end": 16.101243, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.562, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.121375, "t_end": 16.15934, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 69.702, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.176124, "t_end": 16.209411, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 02 00 79 CA FE", "gap_before_ms": 74.88, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.231456, "t_end": 16.260918, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.115, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.275962, "t_end": 16.300929, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.551, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.319451, "t_end": 16.357215, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.533, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.375808, "t_end": 16.409101, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 01 00 11 E0 FE", "gap_before_ms": 74.879, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.429616, "t_end": 16.458973, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.401, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.475659, "t_end": 16.500627, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.559, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.517737, "t_end": 16.555502, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.764, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.575509, "t_end": 16.608802, "direction": "panel", "n_bytes": 8, "bytes_hex": "FF 40 23 00 00 C9 F9 FE", "gap_before_ms": 74.883, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.627925, "t_end": 16.65729, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 40 23 CC 6C FE", "gap_before_ms": 72.423, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.675364, "t_end": 16.700337, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 41 5B 50 43 FE", "gap_before_ms": 66.562, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.716083, "t_end": 16.753844, "direction": "treadmill", "n_bytes": 9, "bytes_hex": "FF 00 41 5B 00 00 C1 90 FE", "gap_before_ms": 58.793, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.775234, "t_end": 16.800206, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 10 00 29 65 FE", "gap_before_ms": 74.897, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.815219, "t_end": 16.844581, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 10 00 A2 AC FE", "gap_before_ms": 61.375, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.875109, "t_end": 16.900081, "direction": "panel", "n_bytes": 6, "bytes_hex": "FF 10 00 29 65 FE", "gap_before_ms": 74.903, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 16.91439, "t_end": 16.943752, "direction": "treadmill", "n_bytes": 7, "bytes_hex": "FF 00 10 00 A2 AC FE", "gap_before_ms": 69.809, "starts_ff": true, "ends_fe": true, "framing_ok": true}
+{"t_start": 21.972473, "t_end": 21.97664, "direction": "treadmill", "n_bytes": 1, "bytes_hex": "00", "gap_before_ms": 5028.722, "starts_ff": false, "ends_fe": false, "framing_ok": false}
