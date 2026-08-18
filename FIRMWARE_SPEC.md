@@ -156,10 +156,15 @@ minute. Consequences for firmware:
 - The original replay failed only because the recording ran out and the gap
   exceeded the watchdog — not a content/timing-sync problem.
 
+**The CRC is enforced** [confirmed, customer bench]: a speed frame with a wrong
+CRC was rejected and the belt stopped on the watchdog. So every keep-alive frame
+must carry a correct CRC — a malformed frame does not reset the timer. Rebuild
+the CRC whenever the speed byte changes (`analysis/make_frame.py` generates
+correct frames for any speed).
+
 Still being pinned down (asked of the customer): exact cut boundary (does 2 s /
-2.5 s still hold?), whether a **bad CRC** still counts as keep-alive (i.e. is
-the CRC actually checked), and whether the speed frame alone starts the belt
-from standstill or `10 01` must precede it.
+2.5 s still hold?), and whether the speed frame alone starts the belt from
+standstill or `10 01` must precede it.
 
 **Safety note:** a ~2–3 s coast after loss of signal is inherent to the
 machine. This does **not** replace the independent hardware E-stop / tether
@@ -175,9 +180,9 @@ machine. This does **not** replace the independent hardware E-stop / tether
 
 ## 9. Open items before firmware is trustworthy
 
-1. Watchdog timeout — **measured ≈2–3 s, open-loop keep-alive confirmed (§7).**
-   Refinements pending: exact cut boundary, whether a bad CRC still keeps it
-   alive, and whether `10 01` is needed to start from standstill.
+1. Watchdog timeout — **measured ≈2–3 s, open-loop keep-alive confirmed (§7);
+   CRC is enforced.** Refinements pending: exact cut boundary, and whether
+   `10 01` is needed to start from standstill.
 2. Speed scale at higher speeds / `spd_hi` behaviour (needs a capture >2.55 km/h
    — the analyzer-kills-line problem applies; scope-only screenshots exist for
    1.1–1.6 km/h but are not bit-readable).

@@ -138,9 +138,13 @@ Panel polls, treadmill answers ~50 ms later, **echoing the command ID**: [M]
       **resolved**.
     - Firmware keep-alive requirement: resend a valid speed frame at least
       every ~1.5 s (margin under 2–3 s). [confirmed]
+  - **The treadmill validates the CRC.** [M, customer bench] A speed frame with
+    an incorrect CRC (`FF 40 23 0F 00 9E EA FE`, correct CRC is `01 7A`) was
+    rejected — the belt stopped on the watchdog. So a malformed frame does NOT
+    count as keep-alive; every frame must carry a correct CRC.
   - Still to pin down (asked): the exact cut boundary (does 2 s / 2.5 s still
-    hold?), whether a bad CRC still counts as keep-alive, and whether the speed
-    frame alone starts the belt from standstill or `10 01` is needed first.
+    hold?) and whether the speed frame alone starts the belt from standstill or
+    `10 01` is needed first.
 
 ## Command ids (partial)
 
