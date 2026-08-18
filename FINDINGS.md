@@ -87,6 +87,11 @@ Panel `40 23` frame, **byte index 3**, is the speed in **units of 0.1 km/h**.
   poll — matches the operator's "плавное замедление" (smooth deceleration).
 - Byte index 4 stays `00` (likely the high byte of a 16-bit speed, or a
   reserved field). [I]
+- **Confirmed live on hardware at a second point** (customer, 18.08): the
+  generated 2.0 km/h frame `FF 40 23 14 00 38 0B FE` (`0x14` = 20) runs the
+  belt well. The 0.1 km/h scale holds at both 1.0 and 2.0 km/h, and generated
+  frames are accepted for arbitrary speeds. `spd_hi` behaviour >25.5 km/h still
+  untested.
 
 ## Conversation structure (request ↔ response)
 

@@ -97,6 +97,14 @@ timeline in [analysis/operator_timeline.md](analysis/operator_timeline.md).
 > `01 7A`, not `9E EA`. The treadmill rejected the bad frame and stopped on the
 > watchdog → **confirms the treadmill validates the CRC** (open question #2).
 
+**[18.08.2026, later] Руслан:** (used a frame from our table)
+> `0xFF, 0x40, 0x23, 0x14, 0x00, 0x38, 0x0B, 0xFE` — а вот на такое она едет и
+> неплохо едет.
+
+> **Confirms:** that is the generated **2.0 km/h** frame (`0x14` = 20 × 0.1). The
+> frame generator works live, arbitrary speeds are accepted, and the 0.1 km/h
+> scale holds at a second point (1.0 and 2.0 km/h).
+
 ---
 
 ## Answers received (18.08.2026 10:57)
@@ -219,6 +227,21 @@ Not yet sent. Frames from `analysis/make_frame.py`.
 > Нужен другой диапазон или шаг — пришлю, генерится мгновенно. И ещё интересно:
 > при плавной смене скорости дорожка сразу подхватывает новое значение или
 > идёт своим темпом разгона/торможения?
+
+### Reply to the working 2.0 km/h frame (draft — Telegram style)
+
+Not yet sent.
+
+> 🎉 Отлично! Это как раз 2.0 км/ч из таблицы — значит генерация кадров рабочая,
+> можно ставить любую скорость (главное пересчитывать CRC).
+
+> То есть панель уже умеет всё нужное: пуск, держать скорость (повтор < 1,5 с),
+> менять скорость, плавно тормозить. По сути протокол закрыт ✅
+
+> Два маленьких вопроса на будущее, не срочно:
+> 1. Самый большой интервал повтора, при котором ещё едет — 2 с? 2,5 с? (запас
+>    до сторожевого таймера)
+> 2. С места её заводит сам кадр скорости, или нужен сначала «Старт» (10 01)?
 
 ### Follow-up — exact frames (the promised "пришлю отдельно")
 

@@ -71,9 +71,10 @@ the id (role of that `00` [unknown] — treat as fixed 0x00 on TX, ignore on RX)
 | `40 23` | both | **Speed set** | `40 23 <spd_lo> <spd_hi>` | `00 40 23` |
 | `41 5B` | both | **Query** (status?) | `41 5B` | `00 41 5B 00 00` |
 
-- **Speed** [confirmed field, inferred scale]: `spd_lo` in **units of 0.1 km/h**
-  (0x0A = 1.0 km/h). `spd_hi` observed always `00`; assumed high byte of a
-  16-bit little-endian value (covers >25.5 km/h). Confirm at higher speeds.
+- **Speed** [scale confirmed on hardware at 1.0 and 2.0 km/h]: `spd_lo` in
+  **units of 0.1 km/h** (0x0A = 1.0, 0x14 = 2.0 km/h — both verified live).
+  `spd_hi` observed always `00`; assumed high byte of a 16-bit little-endian
+  value (covers >25.5 km/h) — untested above 2.0 km/h.
 - Treadmill's `40 23` reply is constant here (no speed echo); its `41 5B` reply
   carries a constant `00 00` data field. Meaning of the `41 5B` query and its
   `00 00` [unknown] — likely status/incline/distance; more captures needed.
