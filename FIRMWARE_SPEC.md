@@ -6,8 +6,9 @@ Tags: **[confirmed]** measured on real data, **[inferred]** consistent but not
 proven, **[unknown]** needs the active test or more captures.
 
 > This spec lets the panel build valid frames and run the normal start→run→stop
-> cycle. The one gap before it can be trusted on hardware is the **watchdog
-> timeout** — see §7 — which needs the active test drafted for the customer.
+> cycle. The watchdog is now **measured** on hardware (≈2–3 s keep-alive, §7);
+> open-loop repetition of a valid speed frame sustains the belt. Remaining gaps
+> are refinements (§9), not blockers.
 
 ## 1. Physical layer  [confirmed]
 
@@ -136,20 +137,33 @@ Notes:
 - Start goes straight to the setpoint (no ramp-up seen in this capture at
   1.0 km/h); ramp-up behaviour at higher setpoints [unknown].
 
-## 7. Watchdog — the remaining gap  [unknown, safety-critical]
+## 7. Watchdog — measured  [confirmed, customer bench 18.08]
 
-Under a **fixed replay** the treadmill safety-cut abruptly after ~1–4 s
-(FINDINGS §watchdog). So the firmware **must** maintain a live exchange; it
-cannot free-run. What we do NOT yet know, and the active test must establish:
+The treadmill runs a **keep-alive watchdog of ≈ 2–3 s**. As long as it receives
+a valid speed frame within that window it keeps the belt moving; ~2–3 s after
+frames stop, it safety-cuts.
 
-- the maximum silence (missed polls) tolerated before the cut;
-- whether the trigger is **timing** (response must fall in the expected window)
-  or **content** (a value must change / match), or both.
+Confirmed on hardware: blindly repeating a single valid speed frame
+(`FF 40 23 0A 00 B9 04 FE`) **every 1.5 s** sustained rotation for over a
+minute. Consequences for firmware:
 
-Safe interim defaults until measured:
-- Never miss the 100 ms poll cadence; keep jitter small.
-- Keep replying/polling continuously the instant the treadmill answers.
-- Do not ship unattended until the timeout is measured on hardware.
+- **Open-loop is sufficient.** No handshake loop, no 100 ms cadence, no query,
+  and **no reacting to the treadmill's replies** are required to stay alive —
+  just a valid speed frame within the window.
+- **Keep-alive rule: resend a valid speed frame at least every ~1.5 s** (safe
+  margin under the 2–3 s watchdog). Sending faster (e.g. the original 100 ms)
+  is fine but unnecessary.
+- The original replay failed only because the recording ran out and the gap
+  exceeded the watchdog — not a content/timing-sync problem.
+
+Still being pinned down (asked of the customer): exact cut boundary (does 2 s /
+2.5 s still hold?), whether a **bad CRC** still counts as keep-alive (i.e. is
+the CRC actually checked), and whether the speed frame alone starts the belt
+from standstill or `10 01` must precede it.
+
+**Safety note:** a ~2–3 s coast after loss of signal is inherent to the
+machine. This does **not** replace the independent hardware E-stop / tether
+(§8) — those must cut power immediately regardless of the data link.
 
 ## 8. Safety requirements (carry into hardware) [from customer + context]
 
@@ -161,7 +175,9 @@ Safe interim defaults until measured:
 
 ## 9. Open items before firmware is trustworthy
 
-1. Watchdog timeout + trigger type (active test). **Blocker for unattended use.**
+1. Watchdog timeout — **measured ≈2–3 s, open-loop keep-alive confirmed (§7).**
+   Refinements pending: exact cut boundary, whether a bad CRC still keeps it
+   alive, and whether `10 01` is needed to start from standstill.
 2. Speed scale at higher speeds / `spd_hi` behaviour (needs a capture >2.55 km/h
    — the analyzer-kills-line problem applies; scope-only screenshots exist for
    1.1–1.6 km/h but are not bit-readable).

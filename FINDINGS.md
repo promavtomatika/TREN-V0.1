@@ -125,9 +125,22 @@ Panel polls, treadmill answers ~50 ms later, **echoing the command ID**: [M]
   - The treadmill sustained internal TX gaps up to **~245 ms** mid-run without
     cutting — a soft lower bound on the tolerance, but not a direct watchdog
     measurement (the panel side is absent from this capture). [M/I]
-  - **Exact timeout needs an active test** (progressively delay/omit responses
-    and watch), which requires transmitting — out of scope for this read-only
-    phase. [note]
+  - **Active test result (customer, 18.08 11:47) — watchdog ≈ 2–3 s.** [M,
+    customer bench] Blindly repeating a single valid speed frame
+    (`FF 40 23 0A 00 B9 04 FE`) every **1.5 s** sustained rotation for **>1
+    minute**; motion stops ~2–3 s after repetition stops. So:
+    - The keep-alive is **open-loop**: no handshake, no query, no 100 ms
+      cadence, and **no reacting to the treadmill's replies** are required —
+      just a valid speed frame within the ~2–3 s window.
+    - **This explains the original replay failure**: the recording simply ran
+      out and the ensuing silence exceeded the ~2–3 s watchdog. Not a counter,
+      echo, or timing-sync issue. The earlier "why replay fails" question is
+      **resolved**.
+    - Firmware keep-alive requirement: resend a valid speed frame at least
+      every ~1.5 s (margin under 2–3 s). [confirmed]
+  - Still to pin down (asked): the exact cut boundary (does 2 s / 2.5 s still
+    hold?), whether a bad CRC still counts as keep-alive, and whether the speed
+    frame alone starts the belt from standstill or `10 01` is needed first.
 
 ## Command ids (partial)
 
@@ -140,12 +153,10 @@ Seen so far, same ids echoed both directions: [M]
 
 ## Open questions / not yet done
 
-- **Why does a fixed replay fail?** In steady running the panel `40 23` frame
-  is byte-identical every poll (speed `0x0A`), with a valid CRC and **no
-  visible sequence counter or echo of the treadmill's data**. A plain replay
-  should therefore satisfy a content watchdog — yet it stalls. So the trigger
-  is likely timing/handshake, or a counter/echo that only moves during events
-  not in this capture. This is the key firmware-architecture question.
+- ~~Why does a fixed replay fail?~~ **RESOLVED** (active test, 18.08): the
+  recording ended and the silence exceeded the ~2–3 s watchdog. Open-loop
+  repetition of a valid speed frame within the window sustains the belt
+  indefinitely — no counter/echo/timing-sync involved.
 - Role of the treadmill body's leading `00`.
 - Meaning of the `41 5B` query and its `00 00` response field.
 - Sequence counter / monotonic field — searched in `40 23`, none found; confirm
