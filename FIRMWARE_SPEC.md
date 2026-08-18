@@ -110,7 +110,8 @@ already tabulated in `analysis/frames.jsonl`).
 ```
 POWER-ON / idle
    |
-   |  send  10 01 (start)          <-- expect 00 10 01 reply
+   |  send  10 01 (start) at least ONCE per session   <-- expect 00 10 01
+   |  (after that, a speed command alone starts/moves the belt) [confirmed]
    v
 RUN  (loop at 100 ms, alternating):
    |    40 23  <speed=setpoint>    <-- expect 00 40 23
@@ -157,15 +158,16 @@ minute. Consequences for firmware:
 - The original replay failed only because the recording ran out and the gap
   exceeded the watchdog — not a content/timing-sync problem.
 
+Keep-alive at **2.5 s still works** [confirmed] → the window is ~2.5–3 s. Use a
+resend margin of ≤2 s.
+
 **The CRC is enforced** [confirmed, customer bench]: a speed frame with a wrong
 CRC was rejected and the belt stopped on the watchdog. So every keep-alive frame
 must carry a correct CRC — a malformed frame does not reset the timer. Rebuild
 the CRC whenever the speed byte changes (`analysis/make_frame.py` generates
-correct frames for any speed).
-
-Still being pinned down (asked of the customer): exact cut boundary (does 2 s /
-2.5 s still hold?), and whether the speed frame alone starts the belt from
-standstill or `10 01` must precede it.
+correct frames for any speed). **Recurring gotcha:** hand-computed CRCs have
+already caused two "it stopped / that speed doesn't work" reports — always
+generate frames, don't hand-roll them.
 
 **Safety note:** a ~2–3 s coast after loss of signal is inherent to the
 machine. This does **not** replace the independent hardware E-stop / tether
@@ -181,10 +183,12 @@ machine. This does **not** replace the independent hardware E-stop / tether
 
 ## 9. Open items before firmware is trustworthy
 
-1. Watchdog timeout — **measured ≈2–3 s, open-loop keep-alive confirmed (§7);
-   CRC is enforced.** Refinements pending: exact cut boundary, and whether
-   `10 01` is needed to start from standstill.
-2. Speed scale at higher speeds / `spd_hi` behaviour (needs a capture >2.55 km/h
+1. Watchdog ≈2.5–3 s, open-loop keep-alive; CRC enforced; one `10 01` per
+   session then speed commands drive it — **all confirmed (§7).**
+2. **Speed acceptance**: customer saw 1.5/2.5/3.5/5.0 fail — but at least the 5.0
+   frame had a hand-computed bad CRC. Verified-CRC frames sent for retest; open
+   only until he confirms they run.
+3. Speed scale at higher speeds / `spd_hi` behaviour (needs a capture >2.55 km/h
    — the analyzer-kills-line problem applies; scope-only screenshots exist for
    1.1–1.6 km/h but are not bit-readable).
 3. Meaning of the `41 5B` query reply (`00 00`) and the treadmill body's leading

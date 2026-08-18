@@ -147,9 +147,26 @@ Panel polls, treadmill answers ~50 ms later, **echoing the command ID**: [M]
     an incorrect CRC (`FF 40 23 0F 00 9E EA FE`, correct CRC is `01 7A`) was
     rejected — the belt stopped on the watchdog. So a malformed frame does NOT
     count as keep-alive; every frame must carry a correct CRC.
-  - Still to pin down (asked): the exact cut boundary (does 2 s / 2.5 s still
-    hold?) and whether the speed frame alone starts the belt from standstill or
-    `10 01` is needed first.
+  - **Keep-alive at 2.5 s still works** [M, customer 18.08 13:31] → watchdog is
+    ~2.5–3 s (nearer 3 s than 2 s). Firmware margin ≤2 s is safe.
+  - **Start from standstill**: one `10 01` at least once per session is enough;
+    thereafter a speed command starts/moves the belt. [M, customer]
+
+## Speed-value acceptance — under investigation
+
+Customer reports 1.0 and 2.0 km/h run but "expected" 1.5 / 2.5 / 3.5 / 5.0 do
+not, and suspects a hidden protocol element. **Most likely still the CRC**, not
+a secret:
+- His 5.0 km/h frame `FF 40 23 32 00 24 5B FE` has a **wrong CRC** (correct
+  `DB 7C`) — proven, would be rejected. [M]
+- 1.0 (`B9 04`) and 2.0 (`38 0B`) are the exact frames from our table (copied);
+  2.5 / 3.5 / 5.0 were computed separately and diverged. [I]
+- Fractional speeds are provably valid — the original panel sent 0.9, 0.8 … 0.1
+  km/h during the captured smooth stop. [M]
+- **Test pending**: verified-CRC frames for 1.5/2.5/3.5/5.0 sent to the customer
+  (`analysis/make_frame.py`). If they run → CRC only, no secret. If a
+  verified-CRC frame still fails → a real protocol subtlety exists and an
+  analyzer capture of the native panel is justified.
 
 ## Command ids (partial)
 
