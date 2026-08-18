@@ -110,7 +110,24 @@ Panel polls, treadmill answers ~50 ms later, **echoing the command ID**: [M]
   min/typ/max once the IR exists. [open]
 - Poll cadence: request pairs repeat roughly every ~0.2 s in the run region.
   [M, coarse]
-- Watchdog timeout (why replay stalls): not yet measured. [open]
+- **Replay survival (watchdog), from the old `Ответ_17_1922.csv`**
+  (`analysis/watchdog.py`): three replay attempts; the motor ran **1.66 s** and
+  **0.97 s** before an abrupt stop, a third ran **≥4.24 s** (capture ended
+  first). [M]
+  - **Every shutdown is abrupt** — steady event rate to the last event, then
+    instant silence — categorically unlike a normal Stop (smooth 1.0→0.0 km/h
+    ramp over ~1.8 s). So under replay the treadmill performs a **watchdog
+    safety-cut**, never a controlled stop. **Replay cannot drive this machine;
+    an interactive responder is required.** [M/I]
+  - Survival varies with the attempt (0.97 → ≥4.24 s), so the trigger is *not*
+    a fixed timer from motor-start — it fires when the replayed stream diverges
+    from what the controller expects (timing phase and/or content). [I]
+  - The treadmill sustained internal TX gaps up to **~245 ms** mid-run without
+    cutting — a soft lower bound on the tolerance, but not a direct watchdog
+    measurement (the panel side is absent from this capture). [M/I]
+  - **Exact timeout needs an active test** (progressively delay/omit responses
+    and watch), which requires transmitting — out of scope for this read-only
+    phase. [note]
 
 ## Command ids (partial)
 
@@ -129,9 +146,6 @@ Seen so far, same ids echoed both directions: [M]
   should therefore satisfy a content watchdog — yet it stalls. So the trigger
   is likely timing/handshake, or a counter/echo that only moves during events
   not in this capture. This is the key firmware-architecture question.
-- **Watchdog timeout** — measure how long the treadmill ran under replay before
-  safety-stopping, from the old `Ответ_17_1922.csv`. Bounds the response
-  deadline.
 - Role of the treadmill body's leading `00`.
 - Meaning of the `41 5B` query and its `00 00` response field.
 - Sequence counter / monotonic field — searched in `40 23`, none found; confirm
